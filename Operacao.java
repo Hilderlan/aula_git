@@ -59,8 +59,8 @@ public class Operacao{
         Conta c2 = this.getDestinatario();
 
         if(this.getValor() > 0 && (c1.getSaldo() - this.getValor()) >= 0){
-            c1.setSaldo(c1.getSaldo - this.getValor());
-            c2.setSaldo(c2.getSaldo + this.getValor());
+            c1.setSaldo(c1.getSaldo() - this.getValor());
+            c2.setSaldo(c2.getSaldo() + this.getValor());
         }
         else{
             if((c1.getSaldo - this.getValor()) < 0){
