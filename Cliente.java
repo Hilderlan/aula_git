@@ -36,17 +36,17 @@ public void setListaContas(ArrayList<Conta> listacontas) {
         this.listacontas=listacontas;
     }
 
-public void sacar(double value, Conta conta){
+public void saque(double value, Conta conta){
 Operacao opr = new Operacao(value,null,cont1);
 opr.saque();
 }
 
-public void depositar(double value, Conta conta){
+public void deposito(double value, Conta conta){
 Operacao opr = new Operacao(value,null,cont1);
 opr.deposito();
 }
 
-public void transferir(double value, Conta remetente,Conta destinatario){
+public void transferencia(double value, Conta remetente,Conta destinatario){
 Operacao opr = new Operacao(value,remetente,destinatario);
 opr.transferencia();
 }
