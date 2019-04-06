@@ -51,6 +51,10 @@ Operacao opr = new Operacao(value,remetente,destinatario);
 opr.transferencia();
 }
 
+public void addConta(Conta conta){
+this.getListaContas().add(conta);
+}
+
 public void excluirConta(int num_agencia) {
   for (Conta c : listacontas) {
     if (c.getAgencia() == num_agencia){
