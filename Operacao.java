@@ -1,20 +1,15 @@
 public class Operacao{
-    private int op;
     private double valor;
     private Conta remetente;
     private Conta destinatario;
 
-    public Operacao(int operacao, double valor, Conta remetente, Conta destinatario){
-        this.op = operacao;
+    public Operacao(double valor, Conta remetente, Conta destinatario){
         this.valor = valor;
         this.remetente = remetente;
         this.destinatario = destinatario;
     }
 
     // Getters e Setters
-    public int getOperacao(){
-        return this.op;
-    }
     public double getValor(){
         return this.valor;
     }
@@ -25,9 +20,6 @@ public class Operacao{
         return this.destinatario;
     }
 
-    public int setOperacao(int op){
-        this.op = op;
-    }
     public double setValor(double valor){
         this.valor = valor;
     }
