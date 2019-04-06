@@ -52,7 +52,7 @@ opr.transferencia();
 }
 
 public void excluirConta(int num_agencia) {
-  for conta : listacontas {
+  for (conta : listacontas) {
     if (conta.getAgencia() == num_agencia){
       listacontas.remove(conta);
     }
