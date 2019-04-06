@@ -59,5 +59,14 @@ public void excluirConta(int num_agencia) {
   }
 }
 
-
+public static boolean isCpf(String cpf) {
+  if (cpf.length() != 11){
+    return false;
+  }
+  if (cpf.equals("00000000000") || cpf.equals("11111111111")) {
+    return false;
+  }
+  return true;
 }
+
+} // end CLiente
