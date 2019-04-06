@@ -23,13 +23,33 @@ public ArrayList<Conta> getListaContas() {
         return this.listacontas;
     }
 
-public void adicionarConta(Conta conta){
-this.getListaContas().add(conta);
+
+public void setNome(String nome) {
+        this.nome=nome;
+    }
+
+public void setCpf(String cpf) {
+        this.cpf=cpf;
+    }
+ 
+public void setListaContas(ArrayList<Conta> listacontas) {
+        this.listacontas=listacontas;
+    }
+
+public void sacar(double value, Conta conta){
+Operacao opr = new Operacao(value,null,cont1);
+opr.saque();
 }
 
-public void operacao(){
-
-
+public void depositar(double value, Conta conta){
+Operacao opr = new Operacao(value,null,cont1);
+opr.deposito();
 }
+
+public void transferir(double value, Conta remetente,Conta destinatario){
+Operacao opr = new Operacao(value,remetente,destinatario);
+opr.transferencia();
+}
+
 
 }
