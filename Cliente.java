@@ -37,12 +37,12 @@ public void setListaContas(ArrayList<Conta> listacontas) {
     }
 
 public void saque(double value, Conta conta){
-Operacao opr = new Operacao(value,null,cont1);
+Operacao opr = new Operacao(value,null,conta);
 opr.saque();
 }
 
 public void deposito(double value, Conta conta){
-Operacao opr = new Operacao(value,null,cont1);
+Operacao opr = new Operacao(value,null,conta);
 opr.deposito();
 }
 
