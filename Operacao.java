@@ -20,13 +20,13 @@ public class Operacao{
         return this.destinatario;
     }
 
-    public double setValor(double valor){
+    public void setValor(double valor){
         this.valor = valor;
     }
-    public Conta setRemetente(Conta remetente){
+    public void setRemetente(Conta remetente){
         this.remetente = remetente;
     }
-    public Conta setDestinatario(Conta destinatario){
+    public void setDestinatario(Conta destinatario){
         this.destinatario = destinatario;
     }
 
