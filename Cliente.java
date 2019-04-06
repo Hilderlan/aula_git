@@ -18,7 +18,11 @@ public String getNome() {
 public String getCpf() {
         return this.cpf;
     }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 0d4ee15eb8908b5399b07696bd59aeebefa483db
 public ArrayList<Conta> getListaContas() {
         return this.listacontas;
     }
@@ -31,7 +35,11 @@ public void setNome(String nome) {
 public void setCpf(String cpf) {
         this.cpf=cpf;
     }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 0d4ee15eb8908b5399b07696bd59aeebefa483db
 public void setListaContas(ArrayList<Conta> listacontas) {
         this.listacontas=listacontas;
     }
@@ -51,6 +59,7 @@ Operacao opr = new Operacao(value,remetente,destinatario);
 opr.transferencia();
 }
 
+<<<<<<< HEAD
 public void excluirConta(int num_agencia) {
   for conta : listacontas {
     if (conta.getAgencia() == num_agencia){
@@ -59,5 +68,7 @@ public void excluirConta(int num_agencia) {
   }
 }
 
+=======
+>>>>>>> 0d4ee15eb8908b5399b07696bd59aeebefa483db
 
 }
