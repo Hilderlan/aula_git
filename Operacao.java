@@ -20,13 +20,13 @@ public class Operacao{
         return this.destinatario;
     }
 
-    public double setValor(double valor){
+    public void setValor(double valor){
         this.valor = valor;
     }
-    public Conta setRemetente(Conta remetente){
+    public void setRemetente(Conta remetente){
         this.remetente = remetente;
     }
-    public Conta setDestinatario(Conta destinatario){
+    public void setDestinatario(Conta destinatario){
         this.destinatario = destinatario;
     }
 
@@ -59,11 +59,11 @@ public class Operacao{
         Conta c2 = this.getDestinatario();
 
         if(this.getValor() > 0 && (c1.getSaldo() - this.getValor()) >= 0){
-            c1.setSaldo(c1.getSaldo - this.getValor());
-            c2.setSaldo(c2.getSaldo + this.getValor());
+            c1.setSaldo(c1.getSaldo() - this.getValor());
+            c2.setSaldo(c2.getSaldo() + this.getValor());
         }
         else{
-            if((c1.getSaldo - this.getValor()) < 0){
+            if((c1.getSaldo() - this.getValor()) < 0){
                 System.out.println("Saldo insuficiente");
             }
             else if(this.getValor() < 0){

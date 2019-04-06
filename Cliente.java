@@ -37,12 +37,12 @@ public void setListaContas(ArrayList<Conta> listacontas) {
     }
 
 public void saque(double value, Conta conta){
-Operacao opr = new Operacao(value,null,cont1);
+Operacao opr = new Operacao(value,null,conta);
 opr.saque();
 }
 
 public void deposito(double value, Conta conta){
-Operacao opr = new Operacao(value,null,cont1);
+Operacao opr = new Operacao(value,null,conta);
 opr.deposito();
 }
 
@@ -51,13 +51,26 @@ Operacao opr = new Operacao(value,remetente,destinatario);
 opr.transferencia();
 }
 
+public void addConta(Conta conta){
+this.getListaContas().add(conta);
+}
+
 public void excluirConta(int num_agencia) {
-  for conta : listacontas {
-    if (conta.getAgencia() == num_agencia){
-      listacontas.remove(conta);
+  for (Conta c : listacontas) {
+    if (c.getAgencia() == num_agencia){
+      listacontas.remove(c);
     }
   }
 }
 
-
+public static boolean isCpf(String cpf) {
+  if (cpf.length() != 11){
+    return false;
+  }
+  if (cpf.equals("00000000000") || cpf.equals("11111111111")) {
+    return false;
+  }
+  return true;
 }
+
+} // end CLiente

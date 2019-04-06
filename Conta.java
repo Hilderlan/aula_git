@@ -3,15 +3,15 @@ public class Conta {
   private int num_agencia;
   private double saldo = 0;
 
-  private void setSaldo(double valor) {
+  public void setSaldo(double valor) {
     this.saldo = valor;
   }
 
-  private double getSaldo() {
+  public double getSaldo() {
     return this.saldo;
   }
 
-  private int getAgencia() {
+  public int getAgencia() {
     return num_agencia;
   }
 
