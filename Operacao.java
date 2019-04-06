@@ -63,7 +63,7 @@ public class Operacao{
             c2.setSaldo(c2.getSaldo() + this.getValor());
         }
         else{
-            if((c1.getSaldo - this.getValor()) < 0){
+            if((c1.getSaldo() - this.getValor()) < 0){
                 System.out.println("Saldo insuficiente");
             }
             else if(this.getValor() < 0){
