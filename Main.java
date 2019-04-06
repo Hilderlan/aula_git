@@ -7,7 +7,7 @@ public class Main {
 
 	public static void menuCliente(){
 		Scanner in = new Scanner(System.in);
-		Menu menuCliente = new Menu("Menu Cliente", Arrays.asList("Adicionar cliente", "Remover cliente", "Sair"))
+		Menu menuCliente = new Menu("Menu Cliente", Arrays.asList("Adicionar cliente", "Remover cliente", "Sair"));
 
 		Cliente c = null;
 		String cpf, nome;
