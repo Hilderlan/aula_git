@@ -19,17 +19,19 @@ public class Menu {
 	}
 
 	public int getSelection() {
+		Scanner sc = new Scanner(System.in);
 		int op = 0;
-		while (op==0){
+
+		while (op == 0){
 			System.out.println(title+"\n");
-			int i=1;
+			int i = 1;
 			for (String option : options) {
 				System.out.println(i++ + " - " + option);
 			}
 
-			System.out.println("Informe a opcao desejada. ");
-			Scanner s = new Scanner(System.in);
-			String str = s.nextLine();
+			System.out.println("Informe a opcao desejada: ");
+			String str = sc.nextLine();
+
 			try {
 				op = Integer.parseInt(str);
 			}
@@ -42,6 +44,7 @@ public class Menu {
 			}
 
 		}
+		sc.close();
 		return op;
 	}
 }
