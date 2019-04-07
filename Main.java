@@ -1,6 +1,11 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ac5fc7843f06077d0d6b3b874e0d038c17c90f2a
 public class Main {
 
 	public static void menuCliente(){
@@ -11,7 +16,7 @@ public class Main {
 		String cpf, nome;
 
 		do{
-			op = menuCliente.getSelection();
+			int op = menuCliente.getSelection();
 			switch(op){
 				case 0:	// Adicionar clientes
 					System.out.println("Informe o CPF do cliente: ");
