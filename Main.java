@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void menuCliente(){
+		Administradora adm = new Administradora();
 		Scanner in = new Scanner(System.in);
 		Menu menuCliente = new Menu("Menu Cliente", Arrays.asList("Adicionar cliente", "Remover cliente", "Sair"));
 
@@ -17,12 +18,12 @@ public class Main {
 					System.out.println("Informe o CPF do cliente: ");
 					cpf = in.nextLine();
 					
-					if (c.verificarCPF()){
+					if (adm.verificarCPF(cpf) != null){
 						System.out.println("Informe o nome do Cliente: ");
 						nome = in.nextLine();
 						c = new Cliente(nome, cpf, new ArrayList<Conta>());
 
-						c.getClientes().add(c);
+						adm.cadastrarCliente(c);
 					}
 					else{
 						System.out.println("CPF já existente!");
@@ -32,10 +33,10 @@ public class Main {
 				case 1:	// Remover clientes
 					System.out.println("Informe o CPF do Cliente: ");
 					cpf = in.nextLine();
-					c = c.getCliente(cpf);
+					c = adm.verificarCPF(cpf);
 
 					if(c != null){
-						c.removerCliente(cpf);
+						adm.removerCliente(c);
 					}
 					else{
 						System.out.println("Cliente inexistente");
@@ -57,20 +58,19 @@ public class Main {
 
 		Cliente cliente = adm.verificarCPF(cpf);
 
+		if(cliente == null){ System.out.println("Cliente inexistente!"); return; }
+
 		Conta c = null;
 		int nro;
-
 
 		do{
 			op = menuCliente.getSelection();
 			switch(op){
 				case 0:	// Adicionar contas
 					System.out.println("Digite o numero da conta: ");
-					nro = in.nextLine();
+					nro = in.nextInt();
 
-					if(c.verificarConta(nro) == null){
-						c = new Conta(nro, 0.0);
-
+					if(adm.verificarConta(nro) == null){
 						do{
 							System.out.println("Deseja já depositar algum valor na conta? < 1 ! 2 >");
 							int resp = in.nextInt();
@@ -98,8 +98,8 @@ public class Main {
 					System.out.println("Digite o numero da conta a ser removida: ");	
 					nro = in.nextInt();
 
-					if(c.verificarConta(nro) != null){
-						cliente.removerConta(nro);
+					if(adm.verificarConta(nro) != null){
+						cliente.excluirConta(nro);
 					}
 					else{
 						System.out.println("Conta inexistente!");

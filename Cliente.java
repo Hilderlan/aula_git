@@ -53,7 +53,7 @@ public class Cliente {
 
     public void excluirConta(int num_agencia) {
         for (Conta c : this.getListaContas()) {
-                if (c.getAgencia() == num_agencia){
+            if (c.getAgencia() == num_agencia){
                 this.getListaContas().remove(c);
             }
         }
