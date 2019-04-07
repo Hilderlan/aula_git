@@ -1,15 +1,10 @@
 import java.util.ArrayList;
 
-public class ClienteAdmin {
-
-    private ArrayList<Cliente> listaclientes;
+public class Administradora {
+    private ArrayList<Cliente> listaclientes = new ArrayList<>();
 
     public ArrayList<Cliente> getListaClientes() {
-    return this.listaclientes;
-    }
-
-    public void setListaClientes(ArrayList<Cliente> listaclientes) {
-        this.listaclientes=listaclientes;
+        return this.listaclientes;
     }
 
     public boolean isCliente(String cpf) {

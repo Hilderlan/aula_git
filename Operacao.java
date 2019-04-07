@@ -30,7 +30,7 @@ public class Operacao{
         this.destinatario = destinatario;
     }
 
-    public void saque(){
+    public void sacar(){
         Conta c = this.getDestinatario();
         if(this.getValor() > 0 && this.getValor() < c.getSaldo()){
             c.setSaldo(c.getSaldo() - this.getValor());
@@ -39,11 +39,11 @@ public class Operacao{
             System.out.println("Saldo insuficiente!");
         }
         else if(this.getValor() <= 0){
-            System.out.println("Valor 0 ou inválido!");
+            System.out.println("Valor nulo ou inválido!");
         }
     }
 
-    public void deposito(){
+    public void depositar(){
         Conta c = this.getDestinatario();
 
         if(this.getValor() > 0){
@@ -54,7 +54,7 @@ public class Operacao{
         }
     }
 
-    public void transferencia(){
+    public void transferir(){
         Conta c1 = this.getRemetente();
         Conta c2 = this.getDestinatario();
 

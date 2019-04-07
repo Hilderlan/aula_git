@@ -7,9 +7,9 @@ public class Cliente {
     private ArrayList<Conta> listacontas;
 
     public Cliente(String nome, String cpf, ArrayList<Conta> listacontas){
-    this.nome = nome;
-    this.cpf = cpf;
-    this.listacontas = listacontas;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.listacontas = listacontas;
     }
 
     public String getNome() {
@@ -24,28 +24,28 @@ public class Cliente {
 
 
     public void setNome(String nome) {
-        this.nome=nome;
+        this.nome = nome;
     }
     public void setCpf(String cpf) {
-        this.cpf=cpf;
+        this.cpf = cpf;
     }
     public void setListaContas(ArrayList<Conta> listacontas) {
-        this.listacontas=listacontas;
+        this.listacontas = listacontas;
     }
 
     public void sacar(double value, Conta conta){
-        Operacao opr = new Operacao(value,null,conta);
-        opr.saque();
+        Operacao opr = new Operacao(value, null, conta);
+        opr.sacar();
     }
 
     public void depositar(double value, Conta conta){
-        Operacao opr = new Operacao(value,null,conta);
-        opr.deposito();
+        Operacao opr = new Operacao(value, null, conta);
+        opr.depositar();
     }
 
-    public void transferir(double value, Conta remetente,Conta destinatario){
-        Operacao opr = new Operacao(value,remetente,destinatario);
-        opr.transferencia();
+    public void transferir(double value, Conta remetente, Conta destinatario){
+        Operacao opr = new Operacao(value, remetente, destinatario);
+        opr.transferir();
     }
 
     public void addConta(Conta conta){
@@ -53,21 +53,10 @@ public class Cliente {
     }
 
     public void excluirConta(int num_agencia) {
-    for (Conta c : listacontas) {
-        if (c.getAgencia() == num_agencia){
-        listacontas.remove(c);
+        for (Conta c : this.getListaContas()) {
+                if (c.getAgencia() == num_agencia){
+                this.getListaContas().remove(c);
+            }
         }
     }
-    }
-
-    public static boolean isCpf(String cpf) {
-    if (cpf.length() != 11){
-        return false;
-    }
-    if (cpf.equals("00000000000") || cpf.equals("11111111111")) {
-        return false;
-    }
-    return true;
-    }
-
-} // end CLiente
+}
