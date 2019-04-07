@@ -1,18 +1,20 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+	static Administradora adm = new Administradora();
+	static Scanner in = new Scanner(System.in);
+	static int op;
 
 	public static void menuCliente(){
-		Administradora adm = new Administradora();
-		Scanner in = new Scanner(System.in);
 		Menu menuCliente = new Menu("Menu Cliente", Arrays.asList("Adicionar cliente", "Remover cliente", "Sair"));
 
 		Cliente c = null;
 		String cpf, nome;
 
 		do{
-			int op = menuCliente.getSelection();
+			op = menuCliente.getSelection();
 			switch(op){
 				case 0:	// Adicionar clientes
 					System.out.println("Informe o CPF do cliente: ");
@@ -50,7 +52,6 @@ public class Main {
 	}
 
 	public static void menuConta(){
-		Scanner in = new Scanner(System.in);
 		Menu menuCliente = new Menu("Menu Contas", Arrays.asList("Adicionar conta", "Remover conta", "Operações", "Sair"));
 
 		System.out.println("Digite o cpf do cliente: ");
@@ -71,9 +72,10 @@ public class Main {
 					nro = in.nextInt();
 
 					if(adm.verificarConta(nro) == null){
+						int resp;
 						do{
 							System.out.println("Deseja já depositar algum valor na conta? < 1 ! 2 >");
-							int resp = in.nextInt();
+							resp = in.nextInt();
 
 						}while(resp != 1 && resp != 2);
 
@@ -113,7 +115,6 @@ public class Main {
 	}
 
 	public static void menuOperacoes(){
-		Scanner in = new Scanner(System.in);
 		Menu menuOperacoes = new Menu("Menu Operacoes", Arrays.asList("Realizar saque", "Realizar deposito", "Realizar transferencia", "Ver saldo", "Sair"));
 
 		System.out.println("Digite o cpf do cliente: ");
@@ -122,8 +123,9 @@ public class Main {
 		Cliente cliente = adm.verificarCPF(cpf);
 
 		System.out.println("Digite o nro da conta: ");
-		String nro = in.nextInt();
-		Conta c1 = cliente.verificarConta(nro);
+		int nro = in.nextInt();
+		int nro2;
+		Conta c1 = adm.verificarConta(nro);
 
 		do{
 			op = menuOperacoes.getSelection();
@@ -155,12 +157,12 @@ public class Main {
 				case 2:	// Realizar transferencia
 					System.out.println("Digite a conta destinataria: ");
 					nro2 = in.nextInt();
-					Conta c2 = cliente.verificarConta(nro2);
+					Conta c2 = adm.verificarConta(nro2);
 
 					if(c2 != null){
 						System.err.println("Digite o valor para a transferencia: ");
 						double valor = in.nextDouble();
-						cliente.transferencia(valor, c1, c2);
+						cliente.transferir(valor, c1, c2);
 					}
 					else{
 						System.out.println("Conta destino inexistente");
