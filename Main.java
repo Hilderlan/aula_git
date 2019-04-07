@@ -1,18 +1,20 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-
+	Administradora adm = new Administradora();
+	
 	public static void menuCliente(){
-		Administradora adm = new Administradora();
 		Scanner in = new Scanner(System.in);
 		Menu menuCliente = new Menu("Menu Cliente", Arrays.asList("Adicionar cliente", "Remover cliente", "Sair"));
 
 		Cliente c = null;
 		String cpf, nome;
+		int op;
 
 		do{
-			int op = menuCliente.getSelection();
+			op = menuCliente.getSelection();
 			switch(op){
 				case 0:	// Adicionar clientes
 					System.out.println("Informe o CPF do cliente: ");
