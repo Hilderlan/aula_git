@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-import sun.jvm.hotspot.tools.SysPropsDumper;
+
 
 public class Main {
 
@@ -13,7 +13,7 @@ public class Main {
 		String cpf, nome;
 
 		do{
-			op = menuCliente.getSelection();
+			int op = menuCliente.getSelection();
 			switch(op){
 				case 0:	// Adicionar clientes
 					System.out.println("Informe o CPF do cliente: ");
