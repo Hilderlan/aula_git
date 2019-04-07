@@ -1,11 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ac5fc7843f06077d0d6b3b874e0d038c17c90f2a
 public class Main {
 
 	public static void menuCliente(){
@@ -212,5 +207,4 @@ public class Main {
 		} while(op!=4);	// Sair
 		System.out.println("Fim");
 	}
-
 }
