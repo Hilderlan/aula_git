@@ -9,6 +9,7 @@ public class Administradora {
 
     public void cadastrarCliente(Cliente cliente) {
         this.getListaClientes().add(cliente);
+        System.out.println("Cliente add: " + cliente.getNome());
     }
 
     public void removerCliente(Cliente cliente){
@@ -21,7 +22,7 @@ public class Administradora {
 
     public Cliente verificarCPF(String cpf){
         for(Cliente cliente : this.getListaClientes()){
-            if(cliente.getCpf() == cpf){
+            if(cliente.getCpf().equals(cpf)){
                 return cliente;
             }
         }

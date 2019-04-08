@@ -23,15 +23,14 @@ public class Menu {
 		int op = 0;
 
 		while (op == 0){
-			System.out.println(title+"\n");
+			System.out.println("----------> " + title + " <----------\n");
 			int i = 1;
 			for (String option : options) {
 				System.out.println(i++ + " - " + option);
 			}
 
-			System.out.println("Informe a opcao desejada: ");
+			System.out.println("\nInforme a opcao desejada: ");
 			String str = sc.nextLine();
-
 			try {
 				op = Integer.parseInt(str);
 			}
@@ -42,9 +41,7 @@ public class Menu {
 				System.out.println("Opcao errada!");
 				op=0;
 			}
-
 		}
-		sc.close();
-		return op;
+		return (op - 1);
 	}
 }

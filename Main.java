@@ -20,7 +20,7 @@ public class Main {
 					System.out.println("Informe o CPF do cliente: ");
 					cpf = in.nextLine();
 					
-					if (adm.verificarCPF(cpf) != null){
+					if (adm.verificarCPF(cpf) == null){
 						System.out.println("Informe o nome do Cliente: ");
 						nome = in.nextLine();
 						c = new Cliente(nome, cpf, new ArrayList<Conta>());
@@ -45,10 +45,9 @@ public class Main {
 					}
 					break;
 			}
-		} while (op != 3);
+		} while (op != 2);
 
-		System.out.println("Terminou menu cliente");
-		System.exit(0);
+		System.out.println("\nFim do menu Cliente");
 	}
 
 	public static void menuConta(){
@@ -107,11 +106,14 @@ public class Main {
 						System.out.println("Conta inexistente!");
 					}
 					break;
+
+				case 2:	// Operacoes
+					menuOperacoes();
+					break;
 			}
 		} while (op != 3);
 
-		System.out.println("Terminou menu cliente");
-		System.exit(0);
+		System.out.println("\nFim do menu Conta");
 	}
 
 	public static void menuOperacoes(){
@@ -122,10 +124,14 @@ public class Main {
 
 		Cliente cliente = adm.verificarCPF(cpf);
 
+		if(cliente == null){ System.out.println("Cliente inexistente!"); return; }
+
 		System.out.println("Digite o nro da conta: ");
 		int nro = in.nextInt();
 		int nro2;
 		Conta c1 = adm.verificarConta(nro);
+
+		if(c1 == null){ System.out.println("Conta inexistente!"); return; }
 
 		do{
 			op = menuOperacoes.getSelection();
@@ -178,20 +184,16 @@ public class Main {
 					}
 					break;
 			}
-		} while (op != 3);
+		} while (op != 4);
 
-		System.out.println("Terminou menu cliente");
-		System.exit(0);
+		System.out.println("\nFim do menu Operacoes");
 	}
 
 	public static void main(String[] args) {
 		Menu mainMenu =  new Menu("Menu Principal", Arrays.asList("Cliente", "Conta", "Operacoes", "Sair"));
-		int op=0;
 
 		do {
 			op = mainMenu.getSelection();
-			System.out.println( op + "foi selecionada");
-
 			switch(op){
 				case 0:	// Cliente
 					menuCliente();
@@ -207,6 +209,6 @@ public class Main {
 			}
 
 		} while(op!=4);	// Sair
-		System.out.println("Fim");
+		System.out.println("\n\nTerminou!");
 	}
 }
